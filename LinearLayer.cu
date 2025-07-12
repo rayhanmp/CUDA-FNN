@@ -42,7 +42,7 @@ void LinearLayer::forward(const float* x_d, float* y_d) {
     cudaDeviceSynchronize();
 }
 
-__global__ void matvec_bias(float* W, float* x, float* b, float* y, int M, int K) {
+__global__ void matvec_bias(const float* W, const float* x, const float* b, float* y, int M, int K) {
     int row = blockIdx.x * blockDim.x + threadIdx.x;
 
     if (row < M) {

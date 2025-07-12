@@ -14,5 +14,5 @@ class LinearLayer {
         float* b_d;
 };
 
-__global__ void matvec_bias(float* W, float* x, float* b, float* y, int M, int K);
+__global__ void matvec_bias(const float* W, const float* x, const float* b, float* y, int M, int K);
 
